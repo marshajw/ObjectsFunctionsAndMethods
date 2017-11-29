@@ -1708,7 +1708,7 @@ class _RoseCanvasStub(RoseCanvas):
 
 class TurtleWindow(object):
 
-    def __init__(self):
+    def __init__(self) -> object:
         self._screen = turtle.Screen()
         turtle.Turtle._screen = self._screen
 

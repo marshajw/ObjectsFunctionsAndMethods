@@ -34,9 +34,11 @@ def main():
     window = rg.TurtleWindow()
 
     turtle1()
+    turtle4()
     turtle3()
     turtle2()
     turtle2()
+    turtle5()
 
     window.close_on_mouse_click()
 
@@ -59,7 +61,7 @@ def turtle1():
 def turtle2():
     """
     Constructs a triangle SimpleTurtle.
-    Makes that SimpleTurle go to a RANDOM point,
+    Makes that SimpleTurtle go to a RANDOM point,
     draws a cool shape, and return to where it started from.
     """
     grace = rg.SimpleTurtle('triangle')
@@ -104,7 +106,59 @@ def turtle3():
 
 
 def turtle4():
-    jack  = rg.SimpleTurtle('')
+    jack = rg.SimpleTurtle('turtle')
+    jack.pen = rg.Pen('dark salmon', 5)
+    jack.paint_bucket = rg.PaintBucket('GreenYellow')
+
+    here = rg.Point(random.randrange(-400, 400), random.randrange(-250, 0))
+
+    jack.pen_down()
+    jack.go_to(here)
+    jack.pen_up()
+
+    jack.go_to(here)
+
+    jack.begin_fill()
+    jack.draw_regular_polygon(5, 100)
+    jack.end_fill()
+
+
+def turtle5():
+    olga = rg.SimpleTurtle('turtle')
+    olga.pen = rg.Pen('dark red', 5)
+    olga.paint_bucket = rg.PaintBucket('black')
+
+    henry = rg.SimpleTurtle('classic')
+    henry.pen = rg.Pen('dark blue', 17)
+    henry.paint_bucket = rg.PaintBucket('light cyan')
+
+    here = rg.Point(random.randrange(-300, 300), random.randrange(-200, 0))
+    here1 = rg.Point(random.randrange(-300, 300), random.randrange(-200, 0))
+    here2 = rg.Point(random.randrange(-300, 300), random.randrange(-200, 0))
+    here3 = rg.Point(random.randrange(-300, 300), random.randrange(-200, 0))
+
+    olga.pen_down()
+    olga.go_to(here)
+    olga.pen_up()
+
+    henry.pen_down()
+    henry.go_to(here1)
+
+    olga.go_to(here2)
+
+    olga.begin_fill()
+    olga.draw_regular_polygon(17, 60)
+    olga.end_fill()
+
+    henry.begin_fill()
+    henry.draw_regular_polygon(3, 40)
+    henry.end_fill()
+
+    olga.go_to(here3)
+
+    olga.begin_fill()
+    olga.draw_regular_polygon(22, 35)
+    olga.end_fill()
 
 
 ########################################################################
@@ -138,10 +192,9 @@ def turtle4():
 #   to all of the above questions, change the above TO DO to DONE.
 #
 ########################################################################
-
 ########################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
@@ -167,10 +220,9 @@ def turtle4():
 #   Get help as needed to fix any such errors.
 #
 ########################################################################
-
 ########################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Add a line to   main   that CALLS your new function immediately
 #   AFTER  main  calls turtle1.  So:
 #     -- the SimpleTurtle from turtle1 should move,
@@ -183,10 +235,9 @@ def turtle4():
 #   or does not do what it should, get help as needed to fix it.
 #
 ########################################################################
-
 ########################################################################
 #
-# TODO: 5.
+# DONE: 5.
 #   The previous two TODOs IMPLEMENTED a function (TO DO 3)
 #   and TESTED that function (TO DO 4).
 #

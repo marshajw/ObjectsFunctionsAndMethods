@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jack Marshall.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,6 +14,7 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    lines()
 
 
 def two_circles():
@@ -26,8 +27,24 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow(700, 400)
+
+    center1 = rg.Point(400, 300)
+    circle1 = rg.Circle(center1, 42)
+    circle1.fill_color = 'DarkKhaki'
+    circle1.attach_to(window)
+
+    center2 = rg.Point(450, 250)
+    circle2 = rg.Circle(center2, 45)
+    circle2.fill_color = 'khaki'
+    circle2.attach_to(window)
+
+    window.render()
+
+    window.close_on_mouse_click()
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DEON: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -66,8 +83,39 @@ def circle_and_rectangle():
            75.0
            150.0
     """
+
+    window = rg.RoseWindow(400, 700)
+
+    center = rg.Point(200, 350)
+    circle = rg.Circle(center, 75)
+    circle.fill_color = 'blue'
+    circle.attach_to(window)
+
+    print(circle.outline_thickness)
+    print(circle.fill_color)
+    print(circle.center)
+    print(circle.center.x)
+    print(circle.center.y)
+
+    p1 = rg.Point(50, 200)
+    p2 = rg.Point(200, 50)
+    rectangle = rg.Rectangle(p1, p2)
+    rectangle.fill_color = 'red'
+    rectangle.attach_to(window)
+
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print(rectangle.get_center())
+    print(rectangle.get_center().x)
+    print(rectangle.get_center().y)
+
+    window.render()
+
+    window.close_on_mouse_click()
+
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -99,6 +147,32 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
+
+    window = rg.RoseWindow(700, 500)
+
+    p1 = rg.Point(100, 400)
+    p2 = rg.Point(100, 400)
+    line = rg.Line(p1, p2)
+    line.color = 'red'
+    line.attach_to(window)
+
+    print(line.get_midpoint())
+    print(line.get_midpoint().x)
+    print(line.get_midpoint().y)
+
+    p3 = rg.Point(400, 100)
+    p4 = rg.Point(400, 100)
+    line2 = rg.Line(p3, p4)
+    line2.thickness = 10
+    line2.attach_to(window)
+
+    print(line2.get_midpoint())
+    print(line2.get_midpoint().x)
+    print(line2.get_midpoint().y)
+
+    window.render()
+    window.close_on_mouse_click()
+
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     # ------------------------------------------------------------------

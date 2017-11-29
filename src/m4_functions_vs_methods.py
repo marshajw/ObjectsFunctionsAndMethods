@@ -272,6 +272,7 @@ def try_methods_and_functions():
     clue.draw_square(50)
 
 
+
     ####################################################################
     # DONE: 5. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
@@ -283,7 +284,6 @@ def try_methods_and_functions():
     # function defined above.  If you don't see why, ** ASK FOR HELP. **
     #
     ####################################################################
-
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

@@ -169,7 +169,6 @@ def lines():
     print(line2.get_midpoint())
     print(line2.get_midpoint().x)
     print(line2.get_midpoint().y)
-
     window.render()
     window.close_on_mouse_click()
 
